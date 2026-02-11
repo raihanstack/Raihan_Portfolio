@@ -1,0 +1,40 @@
+/* Header Gradient */
+#header {
+    background: linear-gradient(90deg, #0f172a, #1e293b);
+}
+
+/* Module Title */
+.module h2, 
+.module caption {
+    background: #0ea5e9 !important;
+    color: white !important;
+}
+
+/* Breadcrumb */
+div.breadcrumbs {
+    background: #111827;
+}
+
+/* Buttons */
+.button,
+input[type=submit],
+input[type=button],
+.submit-row input {
+    background: linear-gradient(90deg, #06b6d4, #10b981) !important;
+    border-radius: 8px !important;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.button:hover,
+input[type=submit]:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Header text */
+#site-name a {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+}

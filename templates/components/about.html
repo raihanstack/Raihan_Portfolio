@@ -1,0 +1,83 @@
+<section class="py-24 lg:py-32" id="about">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- HEADER -->
+    <div class="text-center mb-20">
+      <h3 class="text-sm uppercase tracking-[0.3em] text-gray-400">
+        ABOUT ME
+      </h3>
+      <h2 class="text-4xl sm:text-5xl font-extrabold text-white mt-4">
+        Designing Brands That Speak Without Words
+      </h2>
+    </div>
+
+    <!-- MAIN GRID -->
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- LEFT IMAGE -->
+      <div class="relative group">
+        <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-emerald-500 
+                    rounded-2xl blur opacity-30 group-hover:opacity-50 transition duration-500"></div>
+
+        <div class="relative rounded-2xl overflow-hidden border border-white/20 
+                    bg-white/10 backdrop-blur-2xl shadow-2xl">
+          <img src="https://raw.githubusercontent.com/mostafaraihan/Django_Portfolio/refs/heads/master/static/images/profile.png" 
+              alt="Amdadul Houqe" loading="lazy"
+              class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- RIGHT CONTENT -->
+      <div class="space-y-6">
+
+        <h3 class="text-2xl font-bold text-white">Hi, I'm Amdadul Houqe 👋</h3>
+
+        <p class="text-gray-300 leading-relaxed text-justify">
+          I am a <span class="text-white glow-text">designer</span> focused on building 
+          <span class="text-white glow-text">visual</span> identities that elevate brands with clarity and confidence. 
+          My approach blends <span class="text-white glow-text">strategy</span>, <span class="text-white glow-text">creativity</span>, 
+          and <span class="text-white glow-text">modern</span> aesthetics to craft designs that are memorable and impactful.
+        </p>
+
+        <p class="text-gray-400 leading-relaxed text-justify">
+          From <span class="text-white glow-text">logos</span> and <span class="text-white glow-text">brand</span> systems to full campaigns, I turn ideas into <span class="text-white glow-text">experiences</span>. 
+          My goal is to deliver <span class="text-white glow-text">value</span> and <span class="text-white glow-text">recognition</span> for every brand I collaborate with.
+        </p>
+
+        <p class="text-gray-300 leading-relaxed text-justify">
+          I specialize in <span class="text-white glow-text">illustration</span>, <span class="text-white glow-text">motion</span> graphics, and <span class="text-white glow-text">UI/UX</span> design, ensuring every project communicates professionalism and creativity.
+        </p>
+
+        <!-- STATS -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 px-4 sm:px-0">
+          <div class="text-center p-4 sm:p-5 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-2xl shadow-lg">
+            <h4 class="text-xl sm:text-3xl font-bold text-white">1+</h4>
+            <p class="text-gray-400 text-xs sm:text-sm mt-1">Years Experience</p>
+          </div>
+          
+          <div class="text-center p-4 sm:p-5 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-2xl shadow-lg">
+            <h4 class="text-xl sm:text-3xl font-bold text-white">100+</h4>
+            <p class="text-gray-400 text-xs sm:text-sm mt-1">Projects Completed</p>
+          </div>
+          
+          <div class="text-center p-4 sm:p-5 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-2xl shadow-lg">
+            <h4 class="text-xl sm:text-3xl font-bold text-white">100%</h4>
+            <p class="text-gray-400 text-xs sm:text-sm mt-1">Client Satisfaction</p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center mt-24">
+          <a href="{% url 'index' %}#contact"
+            class="inline-block px-8 py-4 rounded-full 
+                    bg-gradient-to-r from-cyan-500 to-emerald-500 
+                    text-white font-semibold shadow-lg 
+                    hover:scale-105 transition transform">
+            Let's Work Together
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

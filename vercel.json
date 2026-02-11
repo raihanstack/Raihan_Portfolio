@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+        {
+        "src": "Django_Portfolio/wsgi.py",
+        "use": "@vercel/python"
+        }
+    ],
+    "routes": [
+        {
+        "src": "/(.*)",
+        "dest": "Django_Portfolio/wsgi.py"
+        }
+    ]
+}

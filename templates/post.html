@@ -1,0 +1,233 @@
+{% extends 'layout/layout.html' %}
+
+{% block content %}
+{% load static %}
+
+<div style="padding-top: 100px;">
+
+<div class="posts-wrapper"> 
+  {% if posts %}
+    {% for post in posts|dictsortreversed:"updated_at" %}
+      <div class="post-card">
+
+        <!-- Post Title -->
+        <h2 class="post-title">{{ post.title }}</h2>
+
+        <!-- Post Row -->
+        <div class="post-row">
+
+          <!-- Left Image -->
+          <div class="post-left">
+            {% if post.images.all %}
+              <img id="main-image-{{ forloop.counter }}" src="{{ post.images.all.0.image.url }}" alt="{{ post.title }}" loading="lazy">
+            {% endif %}
+          </div>
+
+          <!-- Right Content -->
+          <div class="post-right">
+            <div class="note-container">
+              <p class="note">{{ post.note }}</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Thumbnail Row -->
+        {% if post.images.all %}
+          <div class="thumbnail-row">
+            {% for img in post.images.all %}
+              <img src="{{ img.image.url }}" alt="Thumb {{ forloop.counter }}" class="thumbnail" data-main-id="main-image-{{ forloop.parentloop.counter }}" loading="lazy">
+            {% endfor %}
+          </div>
+
+          <!-- Meta -->
+      <p class="meta">Last updated: 
+          <span class="post-time" data-utc="{{ post.updated_at|date:'c' }}"></span>
+      </p>
+
+        {% endif %}
+
+      </div>
+    {% endfor %}
+  {% else %}
+    <p class="text-white text-center mt-10">No posts available.</p>
+  {% endif %}
+
+</div>
+</div>
+
+<style>
+.posts-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.post-card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  padding: 25px;
+  margin-bottom: 30px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 36px rgba(0,0,0,0.5);
+}
+
+.post-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.post-left {
+  flex: 1 1 55%;
+  max-width: 55%;
+}
+.post-left img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 14px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 2px solid rgba(255,255,255,0.1);
+}
+.post-left img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.post-right {
+  flex: 1 1 40%;
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 0 0 6px rgba(0,255,0,0.5);
+}
+
+.note-container {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 15px;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.note-container::-webkit-scrollbar {
+    display: none; 
+}
+
+.thumbnail-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    overflow-x: auto;
+    overflow-y: hidden; 
+    padding-bottom: 5px;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+}
+
+.thumbnail-row::-webkit-scrollbar {
+    display: none; 
+}
+
+.note {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  text-align: justify;
+}
+
+
+.thumbnail-row img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 2px solid transparent;
+  transition: transform 0.3s ease, border 0.3s ease, box-shadow 0.3s ease;
+}
+.thumbnail-row img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+.thumbnail-row img.active {
+  border: 2px solid #00ff99;
+}
+
+/* Meta */
+.meta {
+  font-size: 0.85rem;
+  color: #88ffaa;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width:900px){
+  .post-row { flex-direction: column; }
+  .post-left, .post-right { flex: 1 1 100%; max-width: 100%; }
+
+  .post-left img { 
+    height: auto; 
+    aspect-ratio: 1 / 1;
+    width: 100%;
+  }
+
+  .note-container { max-height: none; overflow: visible; margin-top: 15px; }
+}
+@media (max-width:600px){
+  .thumbnail-row img { width: 120px; height: 120px; }
+  .post-title { font-size: 1.2rem; }
+  .note-container { padding: 0; }
+}
+</style>
+
+<!-- JS -->
+<script>
+// UTC to Local Time
+document.querySelectorAll('.post-time').forEach(el => {
+  const utc = el.dataset.utc;
+  const local = new Date(utc);
+  el.textContent = local.toLocaleString(undefined,{ 
+    year:'numeric', month:'long', day:'numeric', 
+    hour:'numeric', minute:'numeric' 
+  });
+});
+
+// Thumbnail click to change main image
+document.querySelectorAll('.thumbnail-row img').forEach(thumb => {
+  thumb.addEventListener('click', function(){
+    const mainId = this.dataset.mainId;
+    const mainImg = document.getElementById(mainId);
+    if(mainImg){
+      mainImg.src = this.src;
+      this.parentElement.querySelectorAll('img').forEach(t=>t.classList.remove('active'));
+      this.classList.add('active');
+    }
+  });
+});
+
+// First thumbnail active
+document.querySelectorAll('.thumbnail-row').forEach(row => {
+  const thumbs = row.querySelectorAll('img');
+  if(thumbs.length > 0) thumbs[0].classList.add('active');
+});
+</script>
+
+{% endblock %}

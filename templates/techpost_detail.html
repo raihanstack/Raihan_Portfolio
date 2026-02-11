@@ -1,0 +1,237 @@
+{% extends 'layout/layout.html' %}
+
+{% block content %}
+{% load static %}
+
+<div class="post-wrapper">
+    <h1 class="post-title">{{ post.title }}</h1>
+
+    <div class="post-row">
+
+        <div class="post-left">
+            {% if post.images.all %}
+                <img id="main-image" src="{{ post.images.all.0.image.url }}" alt="{{ post.title }}" loading="lazy">
+            {% endif %}
+        </div>
+
+        <div class="post-right">
+            <div class="note-container">
+                <p class="note">{{ post.note }}</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Thumbnail Horizontal Scroll -->
+    <div class="thumbnail-row">
+        {% for img in post.images.all %}
+            <img src="{{ img.image.url }}" class="thumbnail" alt="thumb {{ forloop.counter }}" loading="lazy">
+        {% endfor %}
+    </div>
+
+    <p class="meta">
+        Created at:
+        <span class="post-time" data-utc="{{ post.created_at|date:'c' }}"></span>
+    </p>
+
+    <div class="back-container">
+        <a href="{% url 'index' %}" class="back-btn">← Back to HOME</a>
+    </div>
+</div>
+
+<style>
+body {
+    background: #f0f2f5;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Wrapper */
+.post-wrapper {
+    max-width: 900px;
+    margin: 50px auto;
+    background: #000;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.15);
+    padding: 20px;
+}
+
+/* Title */
+.post-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* Row */
+.post-row {
+    display: flex;
+    gap: 20px;
+}
+
+/* Left */
+.post-left {
+    flex: 0 0 55%;
+}
+#main-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Right */
+.post-right {
+    flex: 0 0 45%;
+}
+.note-container {
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.note {
+    line-height: 1.6;
+    text-align: justify;
+    padding-right: 20px;
+}
+
+.thumbnail-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    white-space: nowrap;
+    padding-bottom: 10px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.thumbnail-row::-webkit-scrollbar {
+    height: 7px;
+}
+.thumbnail-row::-webkit-scrollbar-thumb {
+    background: #092e20;
+    border-radius: 10px;
+}
+
+.thumbnail {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    flex-shrink: 0;
+    border: 2px solid transparent;
+    transition: transform .3s ease, border .3s ease;
+}
+.thumbnail:hover {
+    transform: scale(1.05);
+}
+.thumbnail.active {
+    border-color: #092e20;
+}
+
+/* Meta */
+.meta {
+    font-size: .85rem;
+    color: #888;
+    margin-top: 15px;
+}
+
+/* Back */
+.back-container {
+    margin-top: 30px;
+    text-align: center;
+}
+.back-btn {
+    padding: 10px 20px;
+    background: #092e20;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+/* ===================== */
+/* ✅ MOBILE RESPONSIVE */
+/* ===================== */
+
+@media (max-width: 900px) {
+    .post-row {
+        flex-direction: column;
+    }
+
+    .post-left,
+    .post-right {
+        width: 100%;
+    }
+
+    #main-image {
+        height: 320px;
+    }
+
+    .note-container {
+        max-height: none;
+        margin-top: 15px;
+        overflow: visible;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .post-wrapper {
+        margin: 20px 10px;
+        padding: 15px;
+    }
+
+    .post-title {
+        font-size: 1.6rem;
+    }
+
+    #main-image {
+        height: 800px
+    }
+
+    .note {
+        font-size: 2rem;
+    }
+
+    /* 🔥 mobile thumbnails fix */
+    .thumbnail {
+        width: 140px;
+        height: 140px;
+    }
+
+    .thumbnail-row {
+        gap: 8px;
+        padding-bottom: 8px;
+    }
+}
+</style>
+
+<script>
+// UTC → local time
+document.querySelectorAll('.post-time').forEach(el => {
+    el.textContent = new Date(el.dataset.utc).toLocaleString();
+});
+
+// Thumbnail click
+const mainImage = document.getElementById('main-image');
+const thumbs = document.querySelectorAll('.thumbnail');
+
+thumbs.forEach(t => {
+    t.addEventListener('click', () => {
+        mainImage.src = t.src;
+        thumbs.forEach(x => x.classList.remove('active'));
+        t.classList.add('active');
+    });
+});
+
+if (thumbs.length) thumbs[0].classList.add('active');
+</script>
+{% endblock %}

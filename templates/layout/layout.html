@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Title -->
+    <title>Amdadul Houqe | Professional Graphic Designer</title>
+
+    <!-- Meta Description -->
+    <meta name="description" content="Amdadul Houqe is a professional graphic designer specializing in logo design, brand identity, digital artwork, and creative visual solutions for businesses and personal brands.">
+
+    <!-- Meta Keywords -->
+    <meta name="keywords" content="Graphic Designer, Logo Design, Brand Identity, Visual Branding, Digital Artwork, Creative Designer, Portfolio, UI/UX Design, Freelance Designer, Professional Logo, Web Design, Social Media Graphics, Modern Branding, Visual Storytelling, Amdadul Houqe, amdadhere, design services, creative solutions, unique designs, custom logos, business branding, personal branding, design portfolio">
+
+
+    <!-- Author -->
+    <meta name="author" content="Amdadul Houqe">
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://amdadhere.vercel.app">
+    <meta property="og:title" content="{{ page_title|default:'Amdadul Houqe | Professional Graphic Designer' }}">
+    <meta property="og:description" content="{{ page_description|default:'Professional portfolio of Amdadul Houqe, Graphic Designer specializing in branding and digital artwork.' }}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:image" content="{{ page_image_url|default:'https://raw.githubusercontent.com/mostafaraihan/Django_Portfolio/refs/heads/master/static/images/profile.png' }}">
+
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/mostafaraihan/Django_Portfolio/refs/heads/master/static/images/profile.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/mostafaraihan/Django_Portfolio/refs/heads/master/static/images/profile.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/mostafaraihan/Django_Portfolio/refs/heads/master/static/images/profile.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Amdadul Houqe | Professional Graphic Designer">
+    <meta property="og:description" content="Professional graphic designer specializing in logo design, brand identity, and creative digital artwork. Transforming ideas into modern and memorable visuals.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/mostafaraihan/Django_Portfolio/refs/heads/master/static/images/profile.png">
+    <meta property="og:url" content="https://amdadhere.vercel.app">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Amdadul Houqe">
+
+    <!-- Twitter Card -->
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:site" content="@amdadhere">
+    <meta name="twitter:image:alt" content="Amdadul Houqe | Professional Graphic Designer">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Amdadul Houqe | Professional Graphic Designer">
+    <meta name="twitter:description" content="Specialized in logo design, brand identity, and creative digital artwork. Professional portfolio showcasing unique designs.">
+    <meta name="twitter:image" content="https://raw.githubusercontent.com/mostafaraihan/Django_Portfolio/refs/heads/master/static/images/profile.png">
+    <meta name="twitter:creator" content="@amdadhere">
+
+    <!-- Structured Data (JSON-LD) for SEO rich snippet -->
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://amdadhere.vercel.app",
+    "name": "Amdadul Houqe",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://amdadhere.vercel.app/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+    }
+    </script>
+
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: { 900: '#020617' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Background Style -->
+    <style>
+        .luxury-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(34,211,238,.12), transparent 35%),
+                radial-gradient(circle at 85% 70%, rgba(234,179,8,.10), transparent 40%),
+                linear-gradient(135deg, #020617, #050505);
+        }
+    </style>
+</head>
+
+<body class="bg-dark-900 text-gray-300 font-sans min-h-screen flex flex-col overflow-x-hidden">
+
+<div class="luxury-bg"></div>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="fixed top-2 left-2 right-2 w-auto border-b border-white/10 backdrop-blur-md bg-[#123d62]/50 z-50 rounded-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+
+            <!-- Logo -->
+            <a href="{% url 'index' %}" class="font-bold text-xl text-white">
+                @amadadhere
+            </a>
+
+            <!-- Desktop Menu (lg and above) -->
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="{% url 'index' %}" class="hover:text-white">Home</a>
+                <a href="{% url 'index' %}#services" class="hover:text-white">Services</a>
+                <a href="{% url 'index' %}#about" class="hover:text-white">About</a>
+                <a href="{% url 'index' %}#skills" class="hover:text-white">Skills</a>
+                <a href="{% url 'post' %}" class="hover:text-white">Projects</a>
+                <a href="{% url 'index' %}#contact" class="hover:text-white">Contact</a>
+            </div>
+
+            <!-- Right Section (all views) -->
+            <div class="flex items-center space-x-3 md:space-x-4">
+
+                <!-- Phone Number + WhatsApp (all views) -->
+                <div class="flex items-center gap-2 md:gap-3 text-sm sm:text-base">
+                    <!-- Number click always popup -->
+                    <a href="#" 
+                        class="text-white font-semibold whitespace-nowrap text-xs sm:text-sm lg:text-base cursor-pointer select-none" 
+                        onclick="togglePopup()">
+                        +880 1920-699612
+                    </a>
+
+                    <!-- WhatsApp icon always popup -->
+                    <a href="#" onclick="togglePopup()" class="text-white text-lg sm:text-xl lg:text-2xl">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+                
+                
+            <!-- ================= POPUP ================= -->
+            <div id="topRightPopup"
+                class="fixed top-20 right-5 z-50 opacity-0 pointer-events-none transform translate-x-full transition-all duration-300">
+
+                <div class="bg-white rounded-lg shadow-lg p-4 w-72 pointer-events-auto
+                            top-16 lg:top-14"> <!-- top fixed for all view -->
+                    <div class="flex justify-between items-start">
+                        <h3 class="font-bold text-lg text-gray-800">Contact Me</h3>
+                        <button onclick="togglePopup()" class="text-gray-500 text-xl">&times;</button>
+                    </div>
+
+                    <p class="mt-2 text-gray-700 text-sm">
+                        <b>Phone:</b> +880 1920-699612
+                    </p>
+
+                    <p class="mt-3 text-gray-700 text-sm">
+                        <b>WhatsApp:</b>
+                        <a href="https://wa.me/8801920699612" target="_blank">
+                            <span class="ml-2 px-3 py-1 rounded-full bg-black text-white text-xs">
+                                Chat Now
+                            </span>
+                        </a>
+                    </p>
+                </div>
+            </div>
+
+                <!-- Hamburger Menu (mobile & tablet) -->
+                <button onclick="toggleMenu()" class="text-white text-2xl ml-2 lg:hidden">
+                    <i id="menuIcon" class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+        </div>
+    </div>
+    
+
+    <!-- Mobile & Tablet Dropdown -->
+    <div id="mobileMenu"
+        class="md:block lg:hidden max-h-0 overflow-hidden transition-all duration-500 bg-[#123d62]/95 backdrop-blur-md rounded-b-xl mt-2 mx-2">
+        <div class="flex flex-col px-4 py-3 space-y-3 text-white text-sm sm:text-base">
+            <a href="{% url 'index' %}" onclick="toggleMenu()">Home</a>
+            <a href="{% url 'index' %}#services" onclick="toggleMenu()">Services</a>
+            <a href="{% url 'index' %}#about" onclick="toggleMenu()">About</a>
+            <a href="{% url 'index' %}#skills" onclick="toggleMenu()">Skills</a>
+            <a href="{% url 'post' %}" onclick="toggleMenu()">Projects</a>
+            <a href="{% url 'index' %}#contact" onclick="toggleMenu()">Contact</a>
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- ================= MAIN ================= -->
+<main class="flex-grow px-4 sm:px-6 lg:px-8 relative z-10">
+    {% block content %}
+    {% endblock %}
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="py-0.5 sm:py-2 mt-6 border-t border-white/10 backdrop-blur-md bg-white/10">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-4">
+
+        <!-- Left Section -->
+        <div class="text-gray-300 text-center sm:text-left text-[10px] sm:text-sm leading-tight">
+            &copy; 2026 Amdadul Houqe. All rights reserved.<br class="sm:hidden">
+            Developed by <span class="font-semibold text-white">
+                <a href="https://www.facebook.com/raihanstack" target="_blank" class="hover:text-white transition-colors duration-300">
+                    Mostafa Raihan
+                </a>
+            </span>
+        </div>
+
+        <!-- Right Section: Social Icons -->
+        <div class="flex items-center gap-1 sm:gap-4 text-gray-300">
+            <a href="https://github.com/raihanstack" target="_blank" class="hover:text-white transition-colors duration-300">
+                <i class="fab fa-github text-xs sm:text-base"></i>
+            </a>
+            <a href="https://www.facebook.com/raihanstack" target="_blank" class="hover:text-white transition-colors duration-300">
+                <i class="fab fa-facebook text-xs sm:text-base"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/raihanstack" target="_blank" class="hover:text-white transition-colors duration-300">
+                <i class="fab fa-linkedin text-xs sm:text-base"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- ================= SCRIPT ================= -->
+
+<script>
+const popup = document.getElementById('topRightPopup');
+let isPopupVisible = false;
+
+function togglePopup() {
+    isPopupVisible = !isPopupVisible;
+
+    popup.classList.toggle('translate-x-full', !isPopupVisible);
+    popup.classList.toggle('opacity-100', isPopupVisible);
+    popup.classList.toggle('opacity-0', !isPopupVisible);
+}
+
+// Mobile & Tablet menu toggle
+function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    const icon = document.getElementById("menuIcon");
+
+    if (menu.classList.contains("max-h-0")) {
+        menu.classList.remove("max-h-0");
+        menu.classList.add("max-h-96");
+        icon.classList.remove("fa-bars");
+        icon.classList.add("fa-xmark");
+    } else {
+        menu.classList.add("max-h-0");
+        menu.classList.remove("max-h-96");
+        icon.classList.remove("fa-xmark");
+        icon.classList.add("fa-bars");
+    }
+}
+</script>
+
+</body>
+</html>

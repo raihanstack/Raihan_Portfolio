@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+# Sitemap এর লিংক
+Sitemap: https://amdadhere.vercel.app/sitemap.xml

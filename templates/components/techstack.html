@@ -1,0 +1,118 @@
+<section id="skills" class="py-20 relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Background Blobs -->
+    <div class="absolute top-1/4 left-0 w-96 h-96 bg-[#092e20]/60 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob-slow -z-20"></div>
+    <div class="absolute bottom-1/4 right-0 w-80 h-80 bg-[#092e20] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob-delay -z-20"></div>
+
+    <!-- Section Title -->
+    <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-extrabold text-white glow-text inline-block px-6 py-3 rounded-xl bg-white/10 border border-white/20">
+            My Design Tools & Skills
+        </h2>
+    </div>
+
+    <!-- Central Spine -->
+    <div class="relative flex justify-center items-start">
+        <!-- Center Line -->
+        <div class="absolute top-0 w-1 bg-white/20 h-full z-0"></div>
+
+        <!-- Tool Nodes (Zig-Zag) -->
+        <div class="flex flex-col gap-20 z-10 w-full max-w-4xl">
+
+            <!-- Node 1: Left -->
+            <div class="relative flex justify-start w-full">
+                <div class="flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 shadow-lg hover:scale-105 transition-transform duration-300 w-40 h-40 hover:shadow-xl hover:border-white/40">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Adobe_Photoshop_CC_icon.svg/250px-Adobe_Photoshop_CC_icon.svg.png" 
+                        alt="Photoshop" loading="lazy" class="w-16 h-16 object-contain mb-2">
+                    <h3 class="text-white font-semibold text-sm">Photoshop</h3>
+                </div>
+                <!-- Gradient Connector Line -->
+                <div class="absolute right-1/2 top-1/2 h-1 hidden md:block w-[calc(50%-5rem)] gradient-line"></div>
+            </div>
+
+            <!-- Node 2: Right -->
+            <div class="relative flex justify-end w-full">
+                <div class="flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 shadow-lg hover:scale-105 transition-transform duration-300 w-40 h-40 hover:shadow-xl hover:border-white/40">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/250px-Adobe_Illustrator_CC_icon.svg.png" 
+                        alt="Illustrator" loading="lazy" class="w-16 h-16 object-contain mb-2">
+                    <h3 class="text-white font-semibold text-sm">Illustrator</h3>
+                </div>
+                <div class="absolute left-1/2 top-1/2 h-1 hidden md:block w-[calc(50%-5rem)] gradient-line right-line"></div>
+            </div>
+
+            <!-- Node 3: Left -->
+            <div class="relative flex justify-start w-full">
+                <div class="flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 shadow-lg hover:scale-105 transition-transform duration-300 w-40 h-40 hover:shadow-xl hover:border-white/40">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Adobe_XD_CC_icon.svg/250px-Adobe_XD_CC_icon.svg.png" 
+                        alt="XD" loading="lazy" class="w-16 h-16 object-contain mb-2">
+                    <h3 class="text-white font-semibold text-sm">XD</h3>
+                </div>
+                <div class="absolute right-1/2 top-1/2 h-1 hidden md:block w-[calc(50%-5rem)] gradient-line"></div>
+            </div>
+
+            <!-- Node 4: Right -->
+            <div class="relative flex justify-end w-full">
+                <div class="flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 shadow-lg hover:scale-105 transition-transform duration-300 w-40 h-40 hover:shadow-xl hover:border-white/40">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Adobe_InDesign_CC_icon.svg/250px-Adobe_InDesign_CC_icon.svg.png" 
+                        alt="InDesign" loading="lazy" class="w-16 h-16 object-contain mb-2">
+                    <h3 class="text-white font-semibold text-sm">InDesign</h3>
+                </div>
+                <div class="absolute left-1/2 top-1/2 h-1 hidden md:block w-[calc(50%-5rem)] gradient-line right-line"></div>
+            </div>
+
+            <!-- Node 5: Left -->
+            <div class="relative flex justify-start w-full">
+                <div class="flex flex-col items-center justify-center text-center bg-white/10 backdrop-blur-md rounded-lg p-6 border border-white/20 shadow-lg hover:scale-105 transition-transform duration-300 w-40 h-40 hover:shadow-xl hover:border-white/40">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Adobe_Photoshop_Lightroom_CC_logo.svg/250px-Adobe_Photoshop_Lightroom_CC_logo.svg.png" 
+                        alt="Lightroom" loading="lazy" class="w-16 h-16 object-contain mb-2">
+                    <h3 class="text-white font-semibold text-sm">Lightroom</h3>
+                </div>
+                <div class="absolute right-1/2 top-1/2 h-1 hidden md:block w-[calc(50%-5rem)] gradient-line"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<style>
+/* Glow Text */
+.glow-text { 
+    text-shadow: 0 0 10px #ffffff,0 0 25px #092e20,0 0 35px #092e20; 
+    animation: glow-animation 2s ease-in-out infinite alternate; 
+}
+@keyframes glow-animation { 
+    0% { text-shadow:0 0 10px #ffffff,0 0 25px #092e20,0 0 35px #092e20; } 
+    100% { text-shadow:0 0 20px #ffffff,0 0 40px #092e20,0 0 50px #092e20; } 
+}
+
+/* Liquid Glass */
+.backdrop-blur-md { 
+    background: rgba(255,255,255,0.05); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    border-radius: 1rem; 
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Hover Shadow & Glow */
+.hover\:shadow-xl:hover { 
+    box-shadow: 0 8px 30px rgba(255,255,255,0.2), 0 0 20px rgba(255,255,255,0.1);
+}
+
+/* Gradient Connection Line */
+.gradient-line {
+    background: linear-gradient(to left, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+}
+.right-line {
+    background: linear-gradient(to right, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+}
+
+/* Center spine + mobile responsiveness */
+@media (max-width: 768px) {
+    /* Center line in mobile */
+    .absolute.w-1 { width: 1px !important; left: 50% !important; }
+    /* Hide connector lines */
+    .absolute.h-1 { display: none !important; }
+    /* Center boxes */
+    .flex.justify-start, .flex.justify-end { justify-content: center !important; }
+}
+</style>
