@@ -5,7 +5,12 @@ from django.contrib import messages
 
 def index(request):
     posts = TechPost.objects.all()
-    return render(request, 'index.html', {'posts': posts})
+    tech_list = [
+        "Django","DRF","Python","JavaScript","ReactJS","NextJS",
+        "TailwindCSS","Bootstrap","MySQL","PostgreSQL","MongoDB",
+        "Git","GitHub","Linux"
+    ]
+    return render(request, 'index.html', {'posts': posts, 'tech_list': tech_list})
 
 # -------------------- TechPost Detail --------------------
 def techpost_detail(request, pk):
@@ -51,6 +56,7 @@ def contact(request):
         return redirect('index')
 
     return render(request, 'contact.html')
+
 
 def sitemap(request):
     return render(request, 'sitemap.xml', content_type='application/xml')

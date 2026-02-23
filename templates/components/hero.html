@@ -20,37 +20,31 @@
             </div>
 
             <!-- Title -->
-            <h2 class="text-[22px] md:text-[24px] lg:text-[28px] text-white tracking-tight mb-6 opacity-0 animate-fadeIn">
+            <h2 class="text-[22px] md:text-[24px] lg:text-[28px] text-white tracking-tight mb-6 opacity-0 animate-fadeIn" style="animation-delay:0.2s;">
                 Crafting Professional Web Applications with <span class="text-white glow-text">Django</span> and Modern Tools
             </h2>
 
             <!-- Professional Description -->
-            <p class="mt-4 max-w-2xl lg:max-w-full text-sm sm:text-base text-gray-300 opacity-0 animate-fadeIn" style="animation-delay: 1s;">
+            <p class="mt-4 max-w-2xl lg:max-w-full text-sm sm:text-base text-gray-300 opacity-0 animate-fadeIn" style="animation-delay: 0.6s;">
                 I specialize in building backend systems that are <span class="text-white glow-text font-semibold">secure</span>, 
                 <span class="text-white glow-text font-semibold">scalable</span>, and 
                 <span class="text-white glow-text font-semibold">maintainable</span>. 
                 My approach emphasizes <span class="text-white glow-text font-semibold">performance</span>, <span class="text-white glow-text font-semibold">stability</span>, and <span class="text-white glow-text font-semibold">clean architecture</span> to deliver robust solutions that provide reliable and seamless experiences for users.
             </p>
 
-            <!-- Technologies -->
-            <div class="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start">
-                <span class="text-xs font-medium px-3 py-1 rounded-full bg-teal-500/20 text-teal-300">Django</span>
-                <span class="text-xs font-medium px-3 py-1 rounded-full bg-teal-500/20 text-teal-300">DRF</span>
-                <span class="text-xs font-medium px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400">Python</span>
-                <span class="text-xs font-medium px-3 py-1 rounded-full bg-blue-500/20 text-blue-300">JavaScript</span>
-                <span class="text-xs font-medium px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300">ReactJS</span>
-                <span class="text-xs font-medium px-3 py-1 rounded-full bg-gray-500/20 text-gray-300">NextJS</span>
-                <span class="text-xs font-medium px-3 py-1 rounded-full bg-red-500/20 text-red-300">MySQL</span>
-                <span class="text-xs font-medium px-3 py-1 rounded-full bg-green-500/20 text-green-300">PostgreSQL</span>
-                <span class="text-xs font-medium px-3 py-1 rounded-full bg-orange-500/20 text-orange-300">MongoDB</span>
-            </div>
+           <!-- Technologies -->
+<div class="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start opacity-0 animate-fadeIn" style="animation-delay: 1s;">
+    {% for tech in tech_list %}
+        <span class="text-xs font-medium px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white hover:text-teal-400 hover:bg-white/20 transition-all duration-300">{{ tech }}</span>
+    {% endfor %}
+</div>
 
             <!-- Portfolio / Featured Posts -->
-            <div class="mt-12 flex overflow-x-auto gap-4 py-0 px-0 whitespace-nowrap scrollbar-hidden">
+            <div class="mt-12 flex overflow-x-auto gap-4 py-0 px-0 whitespace-nowrap scrollbar-hidden snap-x snap-mandatory opacity-0 animate-fadeIn" style="animation-delay: 1.4s;">
                 {% for post in posts %}
                     {% if post.images.exists %}
                         {% for img in post.images.all|slice:":1" %}
-                        <div class="flex-none cursor-pointer">
+                        <div class="flex-none cursor-pointer snap-start">
                             <a href="{% url 'techpost_detail' post.pk %}">
                                 <img src="{{ img.image.url }}" alt="{{ post.title }}"
                                     class="w-32 h-32 object-cover rounded-lg border border-gray-200 shadow-md hover:scale-105 transition-transform duration-300">
@@ -63,11 +57,11 @@
         </div>
 
         <!-- Right Profile Image -->
-        <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center lg:justify-end animate-scale-up">
-            <div class="relative w-full max-w-lg p-4 rounded-2xl shadow-2xl backdrop-blur-sm bg-white/20 border border-white/10 group">
+        <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center lg:justify-end opacity-0 animate-scale-up" style="animation-delay: 1.8s;">
+            <div class="relative w-full max-w-lg p-4 rounded-2xl shadow-2xl backdrop-blur-md bg-white/20 border border-white/10 group hover:shadow-xl transition-shadow duration-500">
                 <img src="https://raw.githubusercontent.com/raihanstack/Raihan_Portfolio/refs/heads/master/static/images/profile.png"
                      alt="Mostafa Raihan - Django Developer" loading="lazy"
-                     class="w-full h-auto rounded-xl transform group-hover:scale-[0.98] transition-transform duration-700">
+                     class="w-full h-auto rounded-xl transform group-hover:scale-105 transition-transform duration-700">
             </div>
         </div>
     </div>
@@ -75,19 +69,10 @@
 
 <!-- CSS -->
 <style>
-.mt-12.flex.overflow-x-auto {
-    scrollbar-width: none; 
-    -ms-overflow-style: none; 
-}
 
-.mt-12.flex.overflow-x-auto::-webkit-scrollbar {
-    display: none; 
-}
-
-.mt-12.flex.overflow-x-auto {
-    overflow-x: auto; 
-    overflow-y: hidden;
-}
+/* Scrollbar hidden */
+.scrollbar-hidden { scrollbar-width: none; -ms-overflow-style: none; }
+.scrollbar-hidden::-webkit-scrollbar { display: none; }
 
 /* Animations */
 @keyframes slideUpInitial { from {opacity:0; transform:translateY(20px);} to {opacity:1; transform:translateY(0);} }
@@ -97,8 +82,9 @@
 .animate-fadeIn { animation: fadeIn 0.8s ease-out forwards; }
 
 @keyframes scaleUp { from {opacity:0; transform:scale(0.9);} to {opacity:1; transform:scale(1);} }
-.animate-scale-up { animation: scaleUp 1s cubic-bezier(0.25,0.46,0.45,0.94) forwards; animation-delay:0.3s; }
+.animate-scale-up { animation: scaleUp 1s cubic-bezier(0.25,0.46,0.45,0.94) forwards; }
 
+/* Blob Animation */
 @keyframes blob-movement { 0%,100%{transform:translate(0,0) scale(1);} 25%{transform:translate(20px,-20px) scale(1.1);} 50%{transform:translate(0,30px) scale(0.9);} 75%{transform:translate(-20px,-10px) scale(1.1);} }
 .animate-blob-slow { animation: blob-movement 20s infinite ease-in-out; }
 .animate-blob-delay { animation: blob-movement 20s infinite ease-in-out reverse; animation-delay:5s; }
@@ -112,9 +98,22 @@
     .flex-wrap { flex-wrap: wrap; }
 }
 @media (max-width: 768px) {
-    .lg\\:w-1/2 { width: 100%; }
-    .lg\\:mt-0 { margin-top: 2rem; }
-    .sm\\:flex-row { flex-direction: column; }
-    .sm\\:items-center { align-items: center; }
+    .lg\:w-1/2 { width: 100%; }
+    .lg\:mt-0 { margin-top: 2rem; }
+    .sm\:flex-row { flex-direction: column; }
+    .sm\:items-center { align-items: center; }
 }
+
+/* Snap scroll */
+.snap-x { scroll-snap-type: x mandatory; }
+.snap-start { scroll-snap-align: start; }
+
+/* Node & badges hover */
+span:hover { transform: scale(1.05); transition: all 0.3s ease-in-out; }
+
+/* Horizontal scroll smooth */
+.mt-12.flex.overflow-x-auto { scroll-behavior: smooth; overflow-x: auto; overflow-y: hidden; }
+
+/* Optional: subtle shadow for hover on profile image */
+.group:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.15); transition: all 0.3s ease-in-out; }
 </style>
