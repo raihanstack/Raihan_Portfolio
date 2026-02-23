@@ -67,7 +67,8 @@
                 <a href="{% url 'index' %}#services" class="hover:text-teal-400 transition-colors duration-300">Services</a>
                 <a href="{% url 'index' %}#about" class="hover:text-teal-400 transition-colors duration-300">About</a>
                 <a href="{% url 'index' %}#skills" class="hover:text-teal-400 transition-colors duration-300">Skills</a>
-                <a href="{% url 'post' %}" class="hover:text-teal-400 transition-colors duration-300">Projects</a>
+                <a href="{% url 'index' %}#projects" class="hover:text-teal-400 transition-colors duration-300">Projects</a>
+                <a href="{% url 'post' %}" class="hover:text-teal-400 transition-colors duration-300">Blogs</a>
                 <a href="{% url 'index' %}#contact" class="hover:text-teal-400 transition-colors duration-300">Contact</a>
             </div>
 
@@ -112,7 +113,8 @@
             <a href="{% url 'index' %}#services" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Services</a>
             <a href="{% url 'index' %}#about" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">About</a>
             <a href="{% url 'index' %}#skills" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Skills</a>
-            <a href="{% url 'post' %}" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Projects</a>
+            <a href="{% url 'index' %}#skills" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Projects</a>
+            <a href="{% url 'post' %}" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Blogs</a>
             <a href="{% url 'index' %}#contact" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Contact</a>
         </div>
     </div>
@@ -123,30 +125,6 @@
     {% block content %}
     {% endblock %}
 </main>
-
-<!-- ================= FOOTER ================= -->
-<footer class="py-0.5 sm:py-2 mt-6 border-t border-white/10 backdrop-blur-md bg-white/10">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-1 sm:gap-4">
-
-        <!-- Left Section -->
-        <div class="text-gray-300 text-center sm:text-left text-[10px] sm:text-sm leading-tight">
-            &copy; 2026 Mostafa Raihan. All rights reserved.
-        </div>
-
-        <!-- Right Section: Social Icons -->
-        <div class="flex items-center gap-1 sm:gap-4 text-gray-300">
-            <a href="https://github.com/raihanstack" target="_blank" class="hover:text-white transition-colors duration-300">
-                <i class="fab fa-github text-xs sm:text-base"></i>
-            </a>
-            <a href="https://www.facebook.com/raihanstack" target="_blank" class="hover:text-white transition-colors duration-300">
-                <i class="fab fa-facebook text-xs sm:text-base"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/raihanstack" target="_blank" class="hover:text-white transition-colors duration-300">
-                <i class="fab fa-linkedin text-xs sm:text-base"></i>
-            </a>
-        </div>
-    </div>
-</footer>
 
 <!-- ================= SCRIPT ================= -->
 
