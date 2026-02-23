@@ -1,93 +1,74 @@
 {% load static %}
 
 <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 overflow-hidden">
-    <!-- Blob Animation Background -->
-    <div class="absolute top-1/4 left-0 w-96 h-96 bg-[#092e20]/60 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob-slow -z-20"></div>
-    <div class="absolute bottom-1/4 right-0 w-80 h-80 bg-[#092e20] rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob-delay -z-20"></div>
-
+    <!-- Background Blobs -->
+    <div class="absolute top-1/4 left-0 w-96 h-96 bg-teal-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob-slow -z-20"></div>
+    <div class="absolute bottom-1/4 right-0 w-80 h-80 bg-cyan-500/30 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob-delay -z-20"></div>
     <div class="absolute inset-0 -z-30 bg-grid-pattern opacity-10"></div>
 
     <div class="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-10">
 
-        <!-- Left Text Section -->
+        <!-- Left Text -->
         <div class="lg:w-1/2 text-center lg:text-left">
 
             <!-- Intro Badge -->
             <div class="inline-flex items-center gap-3 px-4 py-2 mb-6 rounded-xl backdrop-blur-md bg-white/10 border border-white/20 opacity-0 animate-slide-up-initial">
                 <span class="w-3 h-3 rounded-full bg-teal-500 animate-pulse"></span>
                 <h3 class="text-lg sm:text-xl font-semibold text-gray-300 m-0">
-                    Hello, I'm a Professional <span class="text-white font-bold text-2xl">Graphic Designer</span>
+                    Hi, I'm <span class="text-white font-bold text-2xl">Mostafa Raihan</span>
                 </h3>
             </div>
-            
+
             <!-- Title -->
             <h2 class="text-[20px] md:text-[22px] lg:text-[28px] text-white tracking-tight mb-6 opacity-0 animate-fadeIn">
-                Specialized in <span class="text-white glow-text">logo</span> and brand identity — transforming ideas into modern, memorable designs that capture the essence of every brand.
+                I Build Modern, Reliable Web Applications with <span class="text-white glow-text">Django</span> & Cutting-Edge Tools
             </h2>
-<div class="mt-12 flex overflow-x-auto overflow-y-hidden gap-4 py-0 px-0 whitespace-nowrap">
-    {% for post in posts %}
-        {% if post.images.exists %}
-            {% for img in post.images.all|slice:":1" %}
-                <div class="flex-none cursor-pointer">
-                    <a href="{% url 'techpost_detail' post.pk %}">
-                        <img src="{{ img.image.url }}" alt="{{ post.title }}"
-                             class="w-32 h-32 object-cover rounded-lg border border-gray-200 shadow-md hover:scale-105 transition-transform duration-300">
-                    </a>
-                </div>
-            {% endfor %}
-        {% endif %}
-    {% endfor %}
-</div>
 
-            <!-- Buttons + Social Icons -->
-            <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 w-full">
+            <!-- Longer Description -->
+            <p class="mt-4 max-w-2xl lg:max-w-full text-sm sm:text-base text-gray-300 opacity-0 animate-fadeIn" style="animation-delay: 1s;">
+                I specialize in developing backend systems that are <span class="text-white glow-text font-semibold">secure</span>, 
+                <span class="text-white glow-text font-semibold">scalable</span>, and 
+                <span class="text-white glow-text font-semibold">highly efficient</span>. 
+                My work ensures fast APIs, seamless user experiences, and stable performance even under high traffic. 
+                I follow modern development practices and use Django, DRF, and supporting technologies to deliver solutions that are robust, maintainable, and ready for future growth.
+            </p>
 
-        <!-- Social Buttons -->
-        <div class="flex justify-center gap-2 flex-wrap w-full sm:w-auto">
-            <a href="https://www.behance.net/amdadhere" target="_blank"
-            class="w-12 h-12 flex items-center justify-center rounded-2xl 
-                    bg-white/10 backdrop-blur-lg border border-white/20 text-white
-                    hover:bg-white/20 hover:scale-110 transition-all duration-300">
-                <i class="fab fa-behance text-2xl"></i>
-            </a>
+            <!-- Technologies -->
+            <div class="flex flex-wrap gap-2 mt-6 justify-center lg:justify-start">
+                <span class="text-xs font-medium px-3 py-1 rounded-full bg-teal-500/20 text-teal-300">Django</span>
+                <span class="text-xs font-medium px-3 py-1 rounded-full bg-teal-500/20 text-teal-300">DRF</span>
+                <span class="text-xs font-medium px-3 py-1 rounded-full bg-yellow-500/20 text-yellow-400">Python</span>
+                <span class="text-xs font-medium px-3 py-1 rounded-full bg-blue-500/20 text-blue-300">JavaScript</span>
+                <span class="text-xs font-medium px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300">ReactJS</span>
+                <span class="text-xs font-medium px-3 py-1 rounded-full bg-gray-500/20 text-gray-300">NextJS</span>
+                <span class="text-xs font-medium px-3 py-1 rounded-full bg-red-500/20 text-red-300">MySQL</span>
+                <span class="text-xs font-medium px-3 py-1 rounded-full bg-green-500/20 text-green-300">PostgreSQL</span>
+                <span class="text-xs font-medium px-3 py-1 rounded-full bg-orange-500/20 text-orange-300">MongoDB</span>
+            </div>
 
-            <a href="https://www.instagram.com/amdadhere" target="_blank"
-            class="w-12 h-12 flex items-center justify-center rounded-2xl 
-                    bg-white/10 backdrop-blur-lg border border-white/20 text-white
-                    hover:bg-white/20 hover:scale-110 transition-all duration-300">
-                <i class="fab fa-instagram text-2xl"></i>
-            </a>
-
-            <a href="https://www.facebook.com/amdadhere" target="_blank"
-            class="w-12 h-12 flex items-center justify-center rounded-2xl 
-                    bg-white/10 backdrop-blur-lg border border-white/20 text-white
-                    hover:bg-white/20 hover:scale-110 transition-all duration-300">
-                <i class="fab fa-facebook text-2xl"></i>
-            </a>
-
-            <a href="https://x.com/amdadhere" target="_blank"
-            class="w-12 h-12 flex items-center justify-center rounded-2xl 
-                    bg-white/10 backdrop-blur-lg border border-white/20 text-white
-                    hover:bg-white/20 hover:scale-110 transition-all duration-300">
-                <i class="fab fa-twitter text-2xl"></i>
-            </a>
-
-            <a href="https://www.linkedin.com/in/amdadhere" target="_blank"
-            class="w-12 h-12 flex items-center justify-center rounded-2xl 
-                    bg-white/10 backdrop-blur-lg border border-white/20 text-white
-                    hover:bg-white/20 hover:scale-110 transition-all duration-300">
-                <i class="fab fa-linkedin text-2xl"></i>
-            </a>
-        </div>
-        </div>
+            <!-- Portfolio / Featured Posts -->
+            <div class="mt-12 flex overflow-x-auto gap-4 py-0 px-0 whitespace-nowrap scrollbar-hidden">
+                {% for post in posts %}
+                    {% if post.images.exists %}
+                        {% for img in post.images.all|slice:":1" %}
+                        <div class="flex-none cursor-pointer">
+                            <a href="{% url 'techpost_detail' post.pk %}">
+                                <img src="{{ img.image.url }}" alt="{{ post.title }}"
+                                    class="w-32 h-32 object-cover rounded-lg border border-gray-200 shadow-md hover:scale-105 transition-transform duration-300">
+                            </a>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
 
         <!-- Right Profile Image -->
         <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center lg:justify-end animate-scale-up">
             <div class="relative w-full max-w-lg p-4 rounded-2xl shadow-2xl backdrop-blur-sm bg-white/20 border border-white/10 group">
-                <img src="https://raw.githubusercontent.com/mostafaraihan/Django_Portfolio/refs/heads/master/static/images/profile.png" 
-                    class="w-full h-auto rounded-xl transform group-hover:scale-[0.98] transition-transform duration-700" 
-                    alt="amdadhere - Graphic Designer"  loading="lazy">
+                <img src="https://raw.githubusercontent.com/raihanstack/Raihan_Portfolio/refs/heads/master/static/images/profile.png"
+                     alt="Mostafa Raihan - Django Developer" loading="lazy"
+                     class="w-full h-auto rounded-xl transform group-hover:scale-[0.98] transition-transform duration-700">
             </div>
         </div>
     </div>
