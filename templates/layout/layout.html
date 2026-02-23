@@ -1,159 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Primary Title -->
-    <title>Mostafa Raihan | Django Developer</title>
+  <!-- Primary Title & Meta -->
+  <title>Mostafa Raihan | Django Developer</title>
+  <meta name="description" content="Mostafa Raihan is a Django Developer building scalable, efficient, and user-friendly web applications. Explore services, projects, and skills.">
+  <meta name="keywords" content="Django Developer, Web Developer, Next.js, React, PostgreSQL, MongoDB, Portfolio, Full Stack Web Development">
+  <meta name="author" content="Mostafa Raihan">
 
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="Mostafa Raihan | Django Developer & Web Engineer">
+  <meta property="og:description" content="Building scalable, efficient, and modern web applications with Django, Next.js, React, and more.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/raihanstack/Raihan_Portfolio/refs/heads/master/static/images/profile.png">
+  <meta property="og:url" content="https://yourwebsite.com">
+  <meta property="og:type" content="website">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mostafa Raihan | Django Developer">
+  <meta name="twitter:description" content="Scalable, efficient, and modern web applications built with Django, Next.js, React, and PostgreSQL.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/raihanstack/Raihan_Portfolio/refs/heads/master/static/images/profile.png">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" href="https://raw.githubusercontent.com/raihanstack/Raihan_Portfolio/refs/heads/master/static/images/profile.png" type="image/x-icon">
 
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        dark: { 900: '#020617' }
-                    }
-                }
-            }
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Config -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'] },
+          colors: { dark: { 900: '#020617' } }
         }
-    </script>
+      }
+    }
+  </script>
 
-    <!-- Background Style -->
-    <style>
-        .luxury-bg {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            background:
-                radial-gradient(circle at 15% 20%, rgba(34,211,238,.12), transparent 35%),
-                radial-gradient(circle at 85% 70%, rgba(234,179,8,.10), transparent 40%),
-                linear-gradient(135deg, #020617, #050505);
-        }
-    </style>
+  <!-- Background Style -->
+  <style>
+    .luxury-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(34,211,238,.12), transparent 35%),
+        radial-gradient(circle at 85% 70%, rgba(234,179,8,.10), transparent 40%),
+        linear-gradient(135deg, #020617, #050505);
+    }
+  </style>
 </head>
 
 <body class="bg-dark-900 text-gray-300 font-sans min-h-screen flex flex-col overflow-x-hidden">
 
-<div class="luxury-bg"></div>
+  <div class="luxury-bg" aria-hidden="true"></div>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="fixed top-2 left-2 right-2 w-auto border-b border-white/10 backdrop-blur-md bg-white/5 z-50 rounded-2xl">
+  <!-- ================= NAVBAR ================= -->
+  <nav role="navigation" aria-label="Main Navigation" class="fixed top-2 left-2 right-2 w-auto border-b border-white/10 backdrop-blur-md bg-white/5 z-50 rounded-2xl">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
+      <div class="flex justify-between items-center h-16">
 
-            <!-- Logo -->
-            <a href="{% url 'index' %}" class="text-white font-bold text-xl hover:text-teal-400 transition-colors duration-300">
-                @raihanstack
-            </a>
+        <!-- Logo -->
+        <a href="{% url 'index' %}" class="text-white font-bold text-xl hover:text-teal-400 transition-colors duration-300">
+          @raihanstack
+        </a>
 
-            <!-- Desktop Menu -->
-            <div class="hidden lg:flex items-center space-x-8">
-                <a href="{% url 'index' %}" class="hover:text-teal-400 transition-colors duration-300">Home</a>
-                <a href="{% url 'index' %}#services" class="hover:text-teal-400 transition-colors duration-300">Services</a>
-                <a href="{% url 'index' %}#about" class="hover:text-teal-400 transition-colors duration-300">About</a>
-                <a href="{% url 'index' %}#skills" class="hover:text-teal-400 transition-colors duration-300">Skills</a>
-                <a href="{% url 'index' %}#projects" class="hover:text-teal-400 transition-colors duration-300">Projects</a>
-                <a href="{% url 'post' %}" class="hover:text-teal-400 transition-colors duration-300">Blogs</a>
-                <a href="{% url 'index' %}#contact" class="hover:text-teal-400 transition-colors duration-300">Contact</a>
-            </div>
-
-            <!-- Right Section -->
-            <div class="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
-
-                <!-- Social Icons (always visible) -->
-                <div class="flex justify-center gap-2">
-                    <a href="https://www.facebook.com/raihanstack" target="_blank"
-                       class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-2xl 
-                              bg-white/10 backdrop-blur-lg border border-white/20 text-white
-                              hover:bg-white/20 hover:text-teal-400 hover:scale-110 transition-all duration-300">
-                        <i class="fab fa-facebook text-sm sm:text-base"></i>
-                    </a>
-                    <a href="https://github.com/raihanstack" target="_blank"
-                       class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-2xl 
-                              bg-white/10 backdrop-blur-lg border border-white/20 text-white
-                              hover:bg-white/20 hover:text-teal-400 hover:scale-110 transition-all duration-300">
-                        <i class="fab fa-github text-sm sm:text-base"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/raihanstack" target="_blank"
-                       class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-2xl 
-                              bg-white/10 backdrop-blur-lg border border-white/20 text-white
-                              hover:bg-white/20 hover:text-teal-400 hover:scale-110 transition-all duration-300">
-                        <i class="fab fa-linkedin text-sm sm:text-base"></i>
-                    </a>
-                </div>
-
-                <!-- Hamburger Menu (Mobile) -->
-                <button onclick="toggleMenu()" class="text-white text-2xl lg:hidden ml-2 p-2 rounded-lg hover:bg-white/10 transition duration-300">
-                    <i id="menuIcon" class="fa-solid fa-bars"></i>
-                </button>
-
-            </div>
+        <!-- Desktop Menu -->
+        <div class="hidden lg:flex items-center space-x-8">
+          <a href="{% url 'index' %}" class="hover:text-teal-400 transition-colors duration-300">Home</a>
+          <a href="{% url 'index' %}#services" class="hover:text-teal-400 transition-colors duration-300">Services</a>
+          <a href="{% url 'index' %}#about" class="hover:text-teal-400 transition-colors duration-300">About</a>
+          <a href="{% url 'index' %}#skills" class="hover:text-teal-400 transition-colors duration-300">Skills</a>
+          <a href="{% url 'index' %}#projects" class="hover:text-teal-400 transition-colors duration-300">Projects</a>
+          <a href="{% url 'post' %}" class="hover:text-teal-400 transition-colors duration-300">Blogs</a>
+          <a href="{% url 'index' %}#contact" class="hover:text-teal-400 transition-colors duration-300">Contact</a>
         </div>
+
+        <!-- Right Section -->
+        <div class="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
+
+          <!-- Social Icons (always visible) -->
+          <div class="flex justify-center gap-2" aria-label="Social Media Links">
+            <a href="https://www.facebook.com/raihanstack" target="_blank" aria-label="Facebook"
+               class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-2xl 
+                      bg-white/10 backdrop-blur-lg border border-white/20 text-white
+                      hover:bg-white/20 hover:text-teal-400 hover:scale-110 transition-all duration-300">
+              <i class="fab fa-facebook text-sm sm:text-base"></i>
+            </a>
+            <a href="https://github.com/raihanstack" target="_blank" aria-label="GitHub"
+               class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-2xl 
+                      bg-white/10 backdrop-blur-lg border border-white/20 text-white
+                      hover:bg-white/20 hover:text-teal-400 hover:scale-110 transition-all duration-300">
+              <i class="fab fa-github text-sm sm:text-base"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/raihanstack" target="_blank" aria-label="LinkedIn"
+               class="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-2xl 
+                      bg-white/10 backdrop-blur-lg border border-white/20 text-white
+                      hover:bg-white/20 hover:text-teal-400 hover:scale-110 transition-all duration-300">
+              <i class="fab fa-linkedin text-sm sm:text-base"></i>
+            </a>
+          </div>
+
+          <!-- Hamburger Menu (Mobile) -->
+          <button onclick="toggleMenu()" aria-label="Toggle Mobile Menu" class="text-white text-2xl lg:hidden ml-2 p-2 rounded-lg hover:bg-white/10 transition duration-300">
+            <i id="menuIcon" class="fa-solid fa-bars"></i>
+          </button>
+
+        </div>
+      </div>
     </div>
 
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="lg:hidden max-h-0 overflow-hidden transition-all duration-500 bg-white/5 backdrop-blur-md rounded-b-xl mt-2 mx-2">
-        <div class="flex flex-col px-4 py-3 space-y-3 text-white text-sm sm:text-base">
-            <a href="{% url 'index' %}" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Home</a>
-            <a href="{% url 'index' %}#services" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Services</a>
-            <a href="{% url 'index' %}#about" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">About</a>
-            <a href="{% url 'index' %}#skills" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Skills</a>
-            <a href="{% url 'index' %}#skills" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Projects</a>
-            <a href="{% url 'post' %}" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Blogs</a>
-            <a href="{% url 'index' %}#contact" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Contact</a>
-        </div>
+      <div class="flex flex-col px-4 py-3 space-y-3 text-white text-sm sm:text-base">
+        <a href="{% url 'index' %}" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Home</a>
+        <a href="{% url 'index' %}#services" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Services</a>
+        <a href="{% url 'index' %}#about" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">About</a>
+        <a href="{% url 'index' %}#skills" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Skills</a>
+        <a href="{% url 'index' %}#projects" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Projects</a>
+        <a href="{% url 'post' %}" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Blogs</a>
+        <a href="{% url 'index' %}#contact" onclick="toggleMenu()" class="hover:text-teal-400 transition-colors duration-300">Contact</a>
+      </div>
     </div>
-</nav>
+  </nav>
 
-<!-- ================= MAIN ================= -->
-<main class="flex-grow px-4 sm:px-6 lg:px-8 relative z-10">
-    {% block content %}
-    {% endblock %}
-</main>
+  <!-- ================= MAIN ================= -->
+  <main class="flex-grow px-4 sm:px-6 lg:px-8 relative z-10">
+      {% block content %}
+      {% endblock %}
+  </main>
 
-<!-- ================= SCRIPT ================= -->
-
-<script>
-const popup = document.getElementById('topRightPopup');
-let isPopupVisible = false;
-
-function togglePopup() {
-    isPopupVisible = !isPopupVisible;
-
-    popup.classList.toggle('translate-x-full', !isPopupVisible);
-    popup.classList.toggle('opacity-100', isPopupVisible);
-    popup.classList.toggle('opacity-0', !isPopupVisible);
-}
-
-function toggleMenu() {
-    const menu = document.getElementById("mobileMenu");
-    const icon = document.getElementById("menuIcon");
-    if (menu.classList.contains("max-h-0")) {
-        menu.classList.remove("max-h-0");
-        menu.classList.add("max-h-96");
-        icon.classList.replace("fa-bars", "fa-xmark");
-    } else {
-        menu.classList.add("max-h-0");
-        menu.classList.remove("max-h-96");
-        icon.classList.replace("fa-xmark", "fa-bars");
-    }
-}
-</script>
-
+  <!-- ================= SCRIPT ================= -->
+  <script>
+  function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      const icon = document.getElementById("menuIcon");
+      if (menu.classList.contains("max-h-0")) {
+          menu.classList.remove("max-h-0");
+          menu.classList.add("max-h-96");
+          icon.classList.replace("fa-bars", "fa-xmark");
+      } else {
+          menu.classList.add("max-h-0");
+          menu.classList.remove("max-h-96");
+          icon.classList.replace("fa-xmark", "fa-bars");
+      }
+  }
+  </script>
 </body>
 </html>
