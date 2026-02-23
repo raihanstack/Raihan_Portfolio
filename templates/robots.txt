@@ -2,4 +2,4 @@ User-agent: *
 Disallow:
 
 # Sitemap এর লিংক
-Sitemap: https://raihanstack.com/sitemap.xml
+Sitemap: https://raihanstack.vercel.app/sitemap.xml
