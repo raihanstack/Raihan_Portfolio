@@ -15,6 +15,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-local-dev-key'
 DEBUG =True
 
 ALLOWED_HOSTS = [
+    'raihanstack.com',
     'raihanstack.pages.dev',
     'raihanstack.vercel.app',
     'localhost',
@@ -22,6 +23,7 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
+    'https://raihanstack.com',
     'https://raihanstack.pages.dev',
     'https://raihanstack.vercel.app',
 ]
