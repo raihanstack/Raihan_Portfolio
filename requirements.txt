@@ -21,7 +21,7 @@ markdown-it-py==4.0.0
 MarkupSafe==3.0.3
 mdurl==0.1.2
 packaging==26.0
-pillow==12.1.0
+pillow==12.1.1
 psycopg==3.3.2
 psycopg-binary==3.3.2
 Pygments==2.19.2
